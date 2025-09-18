@@ -7,6 +7,14 @@ import matplotlib.pyplot as plt
 class Filters:
     # TODO: Image kernels
     Kernels = {
+        'Original': np.array([[0, 0, 0], [0, 1, 0], [0, 0, 0]]),
+        'Blur': (1/9) * np.array([[1, 1, 1], [1, 1, 1], [1, 1, 1]], dtype=np.float32),
+        'Gaussian blur':(1 / 16) * np.array([[1, 2, 1], [2, 4, 2], [1, 2, 1]], dtype=np.float32),
+        'Sharpen': np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]]),
+        'Sobel (x)': np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]),
+        'Sobel (y)': np.array([[-1, -2, -1], [0, 0, 0], [1, 2, 1]]),
+        'Edge Detection': np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]]),
+        'Emboss': np.array([[-2, -1, 0], [-1, 1, 1], [0, 1, 2]])
     }
 
     def __init__(self, kernels=Kernels):
